@@ -12,11 +12,12 @@ import User from "./User"
 import Task from "./Task"
 import ProductMain from "../product/ProductMain";
 
+const Main = () => {
 
-const [tasks, setTasks] = useState([]);
-const [activeUserId, setActiveUserId] = useState(null);
+    const [tasks, setTasks] = useState([]);
+    const [activeUserId, setActiveUserId] = useState(null);
 
-
+}
 
 export default Main
 
