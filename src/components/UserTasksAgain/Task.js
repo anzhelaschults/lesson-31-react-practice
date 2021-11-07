@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ToDo = ({task, chooseTask}) => {
+const ToDo = ({task}) => {
 
     return !task
         ? (<div>Select a user first</div>)
