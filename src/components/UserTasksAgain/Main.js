@@ -11,7 +11,7 @@ import React, {useEffect, useState} from 'react'
 
 import User from "./User"
 import Task from "./Task"
-import Main from "../product/Main"
+import Main from "../UserTasksAgain/Main"
 
 const Main = () => {
 
