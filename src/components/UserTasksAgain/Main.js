@@ -8,9 +8,10 @@
 
 
 import React, {useEffect, useState} from 'react'
+
 import User from "./User"
 import Task from "./Task"
-import ProductMain from "../product/ProductMain";
+import Main from "../product/ProductMain";
 
 const Main = () => {
 
