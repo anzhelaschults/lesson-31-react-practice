@@ -11,12 +11,21 @@ import React, {useEffect, useState} from 'react'
 
 import User from "./User"
 import Task from "./Task"
-import Main from "../product/ProductMain";
+import Main from "../product/ProductMain"
 
 const Main = () => {
 
-    const [tasks, setTasks] = useState([]);
-    const [activeUserId, setActiveUserId] = useState(null);
+    const [tasks, setTasks] = useState([])
+    const [activeUserId, setActiveUserId] = useState(null)
+
+    useEffect(()) =>{
+        fetchUsers()
+        if (!activeUserId) {
+            return
+        }
+        fetchUsersById()
+    },
+    [activeUserId]
 
 }
 
