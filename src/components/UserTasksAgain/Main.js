@@ -18,14 +18,14 @@ const Main = () => {
     const [tasks, setTasks] = useState([])
     const [activeUserId, setActiveUserId] = useState(null)
 
-    useEffect(()) =>{
+    useEffect( () =>{
         fetchUsers()
         if (!activeUserId) {
             return
         }
         fetchUsersById()
     },
-    [activeUserId]
+    [activeUserId])
 
 }
 
