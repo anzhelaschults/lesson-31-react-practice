@@ -11,13 +11,12 @@ import React, {useEffect, useState} from 'react'
 
 import UserList from "./UserList"
 import Task from "./Task"
-import UsersTasksAgain from "./UsersTasksAgain"
 
 const UsersTasksAgain = () => {
 
     const [tasks, setTasks] = useState([])
     const [activeUserId, setActiveUserId] = useState(null)
-    const [userInfo, setUserInfo] = useState(null)
+    const [taskInfo, setTaskInfo] = useState(null)
 
     useEffect(() => {
             fetchUsers()
@@ -32,10 +31,10 @@ const UsersTasksAgain = () => {
         try {
             const response = await fetch('https://jsonplaceholder.typicode.com/users')
             setUsers(await response.json())
-        } catch (e)
-        console.log(e.message)
+        } catch (err) {
+            console.log(err.message)
+        }
     }
-}
 
 const fetchUsersById = async () => {
     try {
@@ -48,11 +47,11 @@ const fetchUsersById = async () => {
 
 return (
     <div className="row">
-        <div className="col"
-        <UserList users={users}> chooseUser={changeActiveUserId}
+        <div className="col">
+        <UserList users={users} chooseUser={changeActiveUserId} />
     </div>
 <div ClassName="col">
-    <Task> user={userInfo}/>
+    <ToDo task={taskInfo}/>
 </div>
 </div>
 )
