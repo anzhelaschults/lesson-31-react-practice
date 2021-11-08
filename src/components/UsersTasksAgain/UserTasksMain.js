@@ -38,7 +38,7 @@ const UserTasksMain = () => {
 
 const fetchTaskById = async () => {
     try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/todos/' + activeUserId)
+        const response = await fetch('https://jsonplaceholder.typicode.com/todos' + activeUserId)
         setTaskInfo(await response.json())
     } catch (err) {
         console.log(err.message)
