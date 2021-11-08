@@ -14,7 +14,7 @@ import Task from "./Task"
 
 const UsersTasksAgain = () => {
 
-    const [tasks, setTasks] = useState([])
+    const [users, setUsers] = useState([])
     const [activeUserId, setActiveUserId] = useState(null)
     const [taskInfo, setTaskInfo] = useState(null)
 
@@ -39,7 +39,7 @@ const UsersTasksAgain = () => {
 const fetchUsersById = async () => {
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/users/' + activeUserId)
-        setUserTask(await response.json())
+        setUsers(await response.json())
     } catch (e) {
         console.log(e.message)
     }
