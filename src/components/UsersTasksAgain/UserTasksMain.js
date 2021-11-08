@@ -12,7 +12,7 @@ import React, {useEffect, useState} from 'react'
 import UserList from "./UserList"
 import Task from "./Task"
 
-const UsersTasksAgain = () => {
+const UserTasksMain = () => {
 
     const [users, setUsers] = useState([])
     const [activeUserId, setActiveUserId] = useState(null)
@@ -23,7 +23,7 @@ const UsersTasksAgain = () => {
             if (!activeUserId) {
                 return
             }
-            fetchUsersById()
+            fetchTaskById()
         },
         [activeUserId])
 
@@ -36,28 +36,32 @@ const UsersTasksAgain = () => {
         }
     }
 
-const fetchUsersById = async () => {
+const fetchTaskById = async () => {
     try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users/' + activeUserId)
-        setUsers(await response.json())
-    } catch (e) {
-        console.log(e.message)
+        const response = await fetch('https://jsonplaceholder.typicode.com/todos/' + activeUserId)
+        setTaskInfo(await response.json())
+    } catch (err) {
+        console.log(err.message)
     }
 }
+
+    const changeActiveUserId = (userId) => {
+        setActiveUserId(userId);
+    }
 
 return (
     <div className="row">
         <div className="col">
         <UserList users={users} chooseUser={changeActiveUserId} />
     </div>
-<div ClassName="col">
-    <ToDo task={taskInfo}/>
+<div className="col">
+    <Task taskInfo={taskInfo}/>
 </div>
 </div>
 )
 }
 
-export default UsersTasksAgain
+export default UserTasksMain
 
 
 
